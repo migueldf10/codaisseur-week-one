@@ -88,15 +88,15 @@ app.get(
 )
 
 // 3000 is common
-const port = 3000
+const port = process.env.PORT || 3000
 
 // confirmation function
 function onListen(robotName) {
-	console.log(`Hola Miguel, you can call me ${robotName}.Listening on port: ${port}`)
+	console.log(`Hola Miguel, you can call me ${robotName} now Listening on port: ${port}`)
 }
 
 // start listening
 app.listen(
 	port, // TCP port where the server listens
-	onListen('HAL 9000') // callback runs when server starts
+	onListen('HAL 9k') // callback runs when server starts
 )
