@@ -28,8 +28,6 @@ function patientsView(request, response) {
 	// handler callback
 	// send data to client
 	const displayKeys = Object.keys(patients[0]).map((key) => '<th>' + key + '</th>').join('')
-	console.log(displayKeys)
-
 	response.send(`
 <html>
 	<head>
@@ -50,8 +48,8 @@ function patientsView(request, response) {
 		return (
 			`<tr>
 				<td>` + index + '</td>'
-			+ Object.keys(patient).map((key) => {
-				return ('<td>' + patient[key] + '</td>')
+			+ Object.values(patient).map((value) => {
+				return ('<td>' + value + '</td>')
 			}).join('')
 			+ '</tr>'
 		)
